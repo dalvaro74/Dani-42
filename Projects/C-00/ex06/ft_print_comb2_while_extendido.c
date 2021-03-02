@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dalvaro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 20:29:18 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/01 20:29:23 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/01 21:29:16 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,33 +19,42 @@ void	print_char(char c)
 
 void	ft_print_comb2(void)
 {
-	char digit1;
-	char digit2;
-	char digit3;
-    char digit4;
+	char d1;
+	char d2;
+	char d3;
+	char d4;
 
-	
-	for (digit1 = '0'; digit1 <='9'; digit1++)
+	d1 = '0';
+	while (d1 <= '9')
 	{
-		for (digit2 = '0'; digit2 <='9'; digit2++)
+		d2 = '0';
+		while (d2 <= '9')
 		{
-			for (digit3 = digit1; digit3 <='9'; digit3++)
+			d3 = d1;
+			while (d3 <= '9')
 			{
-                for (digit4 = digit2+1; digit4 <='9'; digit4++)
-			    {
-                    write(1, &digit1, 1);
-                    write(1, &digit2, 1);
-					write(1, &espacio, 1);
-                    write(1, &digit3, 1);
-                    write(1, &digit4, 1);
-                    if(digit1 != '9' || digit2 != '8' || digit3 !='9' || digit4 !='9')
-                    {
+				if (d3 == d1)
+					d4 = d2 + 1;
+				else
+					d4 = '0';
+				while (d4 <= '9')
+				{
+					write(1, &d1, 1);
+					write(1, &d2, 1);
+					print_char(' ');
+					write(1, &d3, 1);
+					write(1, &d4, 1);
+					if (d1 != '9' || d2 != '8' || d3 != '9' || d4 != '9')
+					{
 						print_char(',');
-                        print_char(' ');
-                    }					
-			    }			
+						print_char(' ');
+					}
+					d4++;
+				}
+				d3++;
 			}
-            
+			d2++;
 		}
+		d1++;
 	}
 }
