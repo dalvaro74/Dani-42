@@ -1,8 +1,6 @@
 # include <unistd.h>
 
-void    ft_putnbr(int nb)
-{
-	/*
+/*
         Daniel Alvaro - 27/02/2021
 
         VARIABLES:
@@ -19,35 +17,41 @@ void    ft_putnbr(int nb)
         Las cifras obtenidas se guardaran en un array. Como se almacenan de atras hacia delanta, deberemos recorrerlo en sentido inverso para escribir
         el numero de manera correcta.
         Para facilitar la logica convertiremos los numero negativos en positivos y simplemente añadiremos al principio el signo negativo. 
-    */
-    
+*/
+
+void	print_char(char c)
+{
+	write(1, &c, 1);
+}
+
+void check_negative (int nb)
+{
+	if (nb <0)
+	{
+		nb = nb * (-1);
+		print_char('-');
+	}
+}
+
+void    ft_putnbr(int nb)
+{    
     int mod;
-    int num;
 	int contador;
 	char numchar[12];
 	const int int2char = 48;
-	char negativo;
 	int i;
 
 	contador = 0;
-	num = nb;
-	negativo = '-';
-
-	if (num <0)
+	check_negative(nb);
+	while (nb!=0)
 	{
-		num = num * (-1);
-		write(1,&negativo,1);
-	}
-	do
-	{
-		mod = num%10;
+		mod = nb%10;
 		numchar[contador] = mod + int2char;
 		contador ++;
-		num = num/10;
+		nb = nb/10;
 	}
-	while (num!=0);
-
-	for (i = contador-1; i>=0; i--)
+	i=contador;	
+	while (--i >= 0)
 	{
 		write(1,&numchar[i],1);
 	}
