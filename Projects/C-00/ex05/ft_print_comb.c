@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dalvaro- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 14:51:25 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/02/26 14:51:28 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/03 17:27:53 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_print_comb(void)
 	char digit1;
 	char digit2;
 	char digit3;
-	
+
 	digit1 = '0' - 1;
 	while (++digit1 <= '7')
 	{
