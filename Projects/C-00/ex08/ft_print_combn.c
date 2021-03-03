@@ -1,44 +1,100 @@
 # include <unistd.h>
 
-void ft_print_combn(int n)
+void	print_char(char c)
 {
-    /*
-        El algoritmo para rellenar las distintas posiciones es el siguiente:
-        nums = Son los numeros del 0 al 9, sera una constante de valor 10, pero el algoritmo 
-        generalizara para casos como por ejemplo coger solo del 0 al 5 (valor 5)
-        n = numero de digitos de los numeros a ordenar podra ir de 1 a 9
-        i = posicion de la cifra dentro del numero, ira desde 0 hasta n-1
+	write(1, &c, 1);
+}
 
-        Asi para cada posicion j los valores posibles seran [i, nums-(n+i)]
+void    print_array(char* c, int n)
+{
+    int i;
 
-        Los valores posibles de cada posicion se guardaran en un array de enteros de dimension [9][9]
-        Y tendre que ver como me apaño para recorrerlos para poder imprimirlos con un write
-    */
-    const int nums = 10;
-    int array_digitos[10][10];
-    int limite_sup;
-    int i,j,k,n ; 
-
-    n= 5;
-
-    for (i=0; i<n; i++)
+    i=0;
+    while(i<n)
     {
-        limite_sup = nums - (n+i);
-        for (k=i; k<=limite_sup;k++)
-        {
-            array_digitos[i][k] = k;
-        }                
+        print_char(c[i]);
+        i++;   
     }
+}
 
+int     get_position(char* a, char* b, int n)
+{
+    int pos;
 
-    for (i=0; i<10; i++)
+    pos = n;
+    while (--pos>=0)
     {
-        for (i=0; i<10; i++)
+        if (a[pos] != b[pos])
         {
-            for (i=0; i<10; i++)
-            {
-
-            }
+            return(pos);
         }
     }
+    return(100);
+}
+
+void     check_comma(char* a, char* b, int n)
+{
+    int j;
+
+    j=0;
+    while (j<n)
+    {
+        if (a[j] != b[j])
+        {
+            print_char(',');
+            print_char(' ');
+            break;
+        }
+        j++;
+    }
+}
+
+void    print_all_num(char* a, char* b, int n)
+{
+    int pos;
+    int i;
+    
+    while (pos != 100)
+    {
+        pos = get_position(a, b, n);
+        if (pos == 100)
+            break;
+        else
+        {
+            a[pos] = a[pos] +1;
+            i = pos+1;
+            while (i < n)
+            {
+                a[i] = a[i-1] + 1;
+                i++;
+            }
+        }
+        print_array(a, n);
+        check_comma(a,b,n);        
+    }
+}
+
+void ft_print_combn(int n)
+{
+    
+    char A[9];
+    char B[9];
+    int i;    
+
+    A[0] = '0';
+    B[0] = '9' -n+1;
+    i=0;
+    
+    while(i<n)
+    {
+        A[i+1] =  A[i] + 1;
+        B[i+1] =  B[i] + 1;
+        i++;           
+    }
+
+    print_array(A, n);
+    print_char(',');
+    print_char(' ');
+    print_all_num(A, B, n);
+      
 }
