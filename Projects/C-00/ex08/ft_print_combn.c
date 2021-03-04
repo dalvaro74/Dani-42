@@ -12,12 +12,16 @@
 
 #include <unistd.h>
 
+char a[9];
+char b[9];
+int n;
+
 void	print_char(char c)
 {
 	write(1, &c, 1);
 }
 
-void	print_array(char *a, char *b, int n)
+void	print_array()
 {
 	int i;
 	int j;
@@ -41,7 +45,7 @@ void	print_array(char *a, char *b, int n)
 	}
 }
 
-int		get_position(char *a, char *b, int n)
+int		get_position()
 {
 	int pos;
 
@@ -56,7 +60,7 @@ int		get_position(char *a, char *b, int n)
 	return (100);
 }
 
-void	print_all_num(char *a, char *b, int n)
+void	print_all_num()
 {
 	int pos;
 	int i;
@@ -64,7 +68,7 @@ void	print_all_num(char *a, char *b, int n)
 	pos = 0;
 	while (pos != 100)
 	{
-		pos = get_position(a, b, n);
+		pos = get_position(n);
 		if (pos == 100)
 			break ;
 		else
@@ -77,16 +81,15 @@ void	print_all_num(char *a, char *b, int n)
 				i++;
 			}
 		}
-		print_array(a, b, n);
+		print_array();
 	}
 }
 
-void	ft_print_combn(int n)
+void	ft_print_combn(int num_size)
 {
 	int		i;
-	char	a[9];
-	char	b[9];
 
+	n = num_size;
 	a[0] = '0';
 	b[0] = '9' - n + 1;
 	i = 0;
@@ -96,6 +99,6 @@ void	ft_print_combn(int n)
 		b[i + 1] = b[i] + 1;
 		i++;
 	}
-	print_array(a, b, n);
-	print_all_num(a, b, n);
+	print_array();
+	print_all_num();
 }
