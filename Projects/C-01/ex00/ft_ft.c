@@ -12,5 +12,5 @@
 
 void	ft_ft(int *nbr)
 {
-	*nbr = 1;
+	*nbr = 42;
 }
