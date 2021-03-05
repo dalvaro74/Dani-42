@@ -10,7 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 void	ft_rev_int_tab(int *tab, int size)
 {
+	int tab_tmp[size];
+	int i;
+	int j;
 
+	i=size;
+	j=0;
+	while (--i >= 0)
+	{
+		tab_tmp[j] = *(tab+i);
+		j++;
+	}
+	i=0;
+	while (i < size)
+	{
+		tab[i] = tab_tmp[i];
+		i++; 
+	}
 }
