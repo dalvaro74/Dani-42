@@ -19,7 +19,7 @@ void	ft_print_numbers(void)
 	num = '0';
 	while (num <= '9')
 	{
-		write(1, &num, 2);
+		write(1, &num, 1);
 		num++;
 	}
 }
