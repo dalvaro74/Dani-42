@@ -12,42 +12,51 @@
 
 #include <unistd.h>
 
-void	print_char(char c)
-{
-	write(1, &c, 1);
-}
-
 int		check_negative(int nb)
 {
 	if (nb < 0)
 	{
 		nb = nb * (-1);
-		print_char('-');
+		write(1, "-", 1);
 	}
 	return (nb);
 }
 
-void	ft_putnbr(int nb)
+void	print_num(int nb)
 {
 	char	numchar[12];
 	int		mod;
-	int		contador;
 	int		i;
-	int		int2char;
 
-	int2char = 48;
-	contador = 0;
-	nb = check_negative(nb);
+	i = 0;
+	
 	while (nb != 0)
 	{
 		mod = nb % 10;
-		numchar[contador] = mod + int2char;
-		contador++;
+		numchar[i] = mod + 48;
+		i++;
 		nb = nb / 10;
 	}
-	i = contador;
 	while (--i >= 0)
 	{
 		write(1, &numchar[i], 1);
 	}
+}
+
+void	ft_putnbr(int nb)
+{	
+	if (nb == -2147483648)
+	{
+		write(1, "-", 1);
+		write(1, "2", 1);
+		ft_putnbr(147483648);
+		return ;
+	}
+	if (nb == 0)
+	{
+		write(1, "0", 1);
+		return ;
+	}
+	nb = check_negative(nb);
+	print_num(nb);	
 }
