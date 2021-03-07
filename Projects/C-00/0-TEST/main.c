@@ -1,8 +1,12 @@
-void ft_print_comb (void);
 
-int main ()
+#include <stdio.h>
+
+int main (void)
 {
-	ft_print_comb();
+	char* message;
+	message = "bar";
+	printf("%s\n ", message);
+
 	return(0);
 }
 
