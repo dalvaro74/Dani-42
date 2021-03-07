@@ -12,11 +12,6 @@
 
 #include <unistd.h>
 
-void	print_char(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_print_comb(void)
 {
 	char digit1;
@@ -37,8 +32,8 @@ void	ft_print_comb(void)
 				write(1, &digit3, 1);
 				if (digit1 != '7' || digit2 != '8' || digit3 != '9')
 				{
-					print_char(';');
-					print_char(' ');
+					write(1, ",", 1);
+					write(1, " ", 1);
 				}
 			}
 		}
