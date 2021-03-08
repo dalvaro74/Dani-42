@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:04:35 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:47:22 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/08 21:47:45 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned intn)
+void	ft_putstr_non_printable(char *str)
 {
-	while (*(src) != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	while (*(dest) != '\0')
-	{
-		*(dest) = '\0';
-		dest++;
-	}
-	return (dest);
+	
 }

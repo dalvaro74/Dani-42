@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:04:35 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:45:04 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/08 21:45:38 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned intn)
+char	*ft_strcapitalize(char *str)
 {
-	while (*(src) != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	while (*(dest) != '\0')
-	{
-		*(dest) = '\0';
-		dest++;
-	}
-	return (dest);
+	
 }

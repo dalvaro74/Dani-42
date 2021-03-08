@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:04:35 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:39:22 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/08 21:40:17 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned intn)
+int		ft_str_is_lowercase(char *str)
 {
-	while (*(src) != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	while (*(dest) != '\0')
-	{
-		*(dest) = '\0';
-		dest++;
-	}
-	return (dest);
+	 
 }

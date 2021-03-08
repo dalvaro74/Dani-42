@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:04:35 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:15:09 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/08 21:16:19 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned intn)
+int	ft_str_is_alpha(char *str)
 {
-	while (*(src) != '\0')
-	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	while (*(dest) != '\0')
-	{
-		*(dest) = '\0';
-		dest++;
-	}
-	return (dest);
+
 }

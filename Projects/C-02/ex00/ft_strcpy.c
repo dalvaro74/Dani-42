@@ -6,18 +6,18 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 19:48:15 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 19:48:16 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/08 21:01:49 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-    while (*(src) != '\0')
-    {
-        *dest = *src;
-        src++;
-        dest++;
-    }
-    *(dest) = '\0';
-    return (dest);
+	while (*(src) != '\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*(dest) = '\0';
+	return (dest);
 }
