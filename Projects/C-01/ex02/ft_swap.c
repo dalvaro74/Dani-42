@@ -6,14 +6,15 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 20:53:06 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/03 20:55:15 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/08 18:40:51 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
-	int tmp;
+	int		tmp;
+
 	tmp = *b;
 	*b = *a;
-	*a = tmp;	
+	*a = tmp;
 }
