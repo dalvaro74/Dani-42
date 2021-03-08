@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 18:20:41 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/03 18:58:15 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/08 18:26:06 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	print_num(int nb)
 	int		i;
 
 	i = 0;
-	
+
 	while (nb != 0)
 	{
 		mod = nb % 10;
@@ -44,7 +44,7 @@ void	print_num(int nb)
 }
 
 void	ft_putnbr(int nb)
-{	
+{
 	if (nb == -2147483648)
 	{
 		write(1, "-", 1);
@@ -58,5 +58,5 @@ void	ft_putnbr(int nb)
 		return ;
 	}
 	nb = check_negative(nb);
-	print_num(nb);	
+	print_num(nb);
 }
