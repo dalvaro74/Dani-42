@@ -8,7 +8,7 @@ int main (void)
 	unsigned int size;
 	int longitud;
 
-	size = 5;
+	size = 46;
 	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src[] = "Creo que esto cabe";
 	
@@ -16,10 +16,12 @@ int main (void)
 	printf("La longitud de lo mio es: %d\n", longitud);
 	printf("%s\n", dest);
 
+	/*
 	char dest2[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src2[] = "Creo que esto cabe";
 	strncpy(dest2, src2, size);
 	printf("%s\n", dest2);
+	*/
 
 	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src3[] = "Creo que esto cabe";

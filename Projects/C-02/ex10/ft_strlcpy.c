@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:46:33 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/09 19:27:30 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:00:59 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int		i;
 
 	i = 0;
-	while (i < size)
+	while (i < size - 1)
 	{
 		if (*(src) != '\0')
 		{
@@ -26,9 +26,14 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		else
 		{
 			*(dest) = '\0';
-			dest++;
+			return (i);
 		}
 		i++;
 	}
+	*(dest) = '\0';
+	i++;
+	src++;
+	while (*(src++) != '\0')
+		i++;
 	return (i);
 }
