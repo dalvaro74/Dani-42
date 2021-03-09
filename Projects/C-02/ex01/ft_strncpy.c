@@ -6,22 +6,29 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:04:35 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/09 15:59:58 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned intn)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	while (*(src) != '\0')
+	unsigned int		i;
+
+	i = 0;
+	while (i < n)
 	{
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	while (*(dest) != '\0')
-	{
-		*(dest) = '\0';
-		dest++;
+		if (*(src) != '\0')
+		{
+			*dest = *src;
+			src++;
+			dest++;
+		}
+		else
+		{
+			*(dest) = '\0';
+			dest++;
+		}
+		i++;
 	}
 	return (dest);
 }
