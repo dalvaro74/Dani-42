@@ -6,11 +6,19 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:16:49 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:17:15 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:33:19 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_numeric(char *str)
 {
-	
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
+	{
+		if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
 }

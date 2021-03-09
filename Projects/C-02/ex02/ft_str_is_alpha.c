@@ -6,11 +6,19 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:15:09 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:16:19 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/09 16:21:50 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_str_is_alpha(char *str)
 {
-
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
+	{
+		if (*str < 'A' || (*str > 'Z' && *str < 'a') || *str > 'z')
+			return (0);
+		str++;
+	}
+	return (1);
 }
