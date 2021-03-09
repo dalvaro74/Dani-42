@@ -6,11 +6,19 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:41:24 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/08 21:41:55 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/09 17:00:25 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_str_is_uppercase(char *str)
 {
-	
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
+	{
+		if (*str < 'A' || *str > 'Z')
+			return (0);
+		str++;
+	}
+	return (1);
 }
