@@ -1,12 +1,12 @@
 
 #include <stdio.h>
+#include <string.h>
 
 int main (void)
 {
-	char* message;
-	message = "bar";
-	printf("%s\n ", message);
-
-	return(0);
+	int longitud;
+	
+	longitud = strlen("hola");
+	printf("%d\n", longitud);
 }
 
