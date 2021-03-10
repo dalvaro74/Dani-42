@@ -6,7 +6,7 @@ char	*ft_strupcase(char *str);
 int main (void)
 {	
 	char pr1[] = "fggg YYY 123";
-	char pr2[] = "SS S";
+	char pr2[] = "SS Sos ";
 
 	printf("%s\n", ft_strupcase(pr1));
 	printf("%s\n", ft_strupcase(pr2));

@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:45:04 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 16:50:01 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:44:15 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/09 17:52:48 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *s)
+char	*ft_strlowcase(char *str)
 {
 	int		i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-		if ((s[i] < '0' || (s[i] > '9' && s[i] < 'A') ||
-			(s[i] > 'Z' && s[i] < 'a') ||
-			s[i] > 'z') && s[i + 1] >= 'a' && s[i + 1] <= 'z')
-			s[i + 1] = s[i + 1] - 32;
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
 		i++;
 	}
-	return (s);
+	return (str);
 }

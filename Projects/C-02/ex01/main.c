@@ -7,10 +7,10 @@ int main (void)
 {	
 	int		n;
 
+	n = 100;
+
 	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src[] = "Creo que esto cabe";
-	n = 20;
-
 	
 	ft_strncpy(dest, src, n);
 	printf("%s\n", dest);

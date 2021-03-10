@@ -5,7 +5,7 @@ char	*ft_strcapitalize(char *str);
 
 int main (void)
 {	
-	char pr1[] = "fggg gYY 123 y no hace ni 10 años que ocurrio ";
+	char pr1[] = "s alut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	char pr2[] = "SS S";
 
 	printf("%s\n", ft_strcapitalize(pr1));

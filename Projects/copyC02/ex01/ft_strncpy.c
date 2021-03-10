@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:45:04 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 16:50:01 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:02:26 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/09 15:59:58 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *s)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		i;
+	unsigned int		i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < n)
 	{
-		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-		if ((s[i] < '0' || (s[i] > '9' && s[i] < 'A') ||
-			(s[i] > 'Z' && s[i] < 'a') ||
-			s[i] > 'z') && s[i + 1] >= 'a' && s[i + 1] <= 'z')
-			s[i + 1] = s[i + 1] - 32;
+		if (*(src) != '\0')
+		{
+			*dest = *src;
+			src++;
+			dest++;
+		}
+		else
+		{
+			*(dest) = '\0';
+			dest++;
+		}
 		i++;
 	}
-	return (s);
+	return (dest);
 }

@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:45:04 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 16:50:01 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:41:24 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/09 17:00:25 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *s)
+int		ft_str_is_uppercase(char *str)
 {
-	int		i;
-
-	i = 0;
-	while (s[i] != '\0')
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
 	{
-		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-		if ((s[i] < '0' || (s[i] > '9' && s[i] < 'A') ||
-			(s[i] > 'Z' && s[i] < 'a') ||
-			s[i] > 'z') && s[i + 1] >= 'a' && s[i + 1] <= 'z')
-			s[i + 1] = s[i + 1] - 32;
-		i++;
+		if (*str < 'A' || *str > 'Z')
+			return (0);
+		str++;
 	}
-	return (s);
+	return (1);
 }

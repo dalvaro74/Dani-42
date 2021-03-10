@@ -6,7 +6,7 @@ int		ft_str_is_lowercase(char *str);
 int main (void)
 {	
 	char pr1[] = "bbbbbbbbtyythjhjh";
-	char pr2[] = "gggA";
+	char pr2[] = "";
 
 	printf("%d\n", ft_str_is_lowercase(pr1));
 	printf("%d\n", ft_str_is_lowercase(pr2));

@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 21:45:04 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 16:50:01 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/08 21:46:33 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/09 21:00:59 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *s)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int		i;
+	unsigned int		i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < size - 1)
 	{
-		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 32;
-		if ((s[i] < '0' || (s[i] > '9' && s[i] < 'A') ||
-			(s[i] > 'Z' && s[i] < 'a') ||
-			s[i] > 'z') && s[i + 1] >= 'a' && s[i + 1] <= 'z')
-			s[i + 1] = s[i + 1] - 32;
+		if (*(src) != '\0')
+		{
+			*dest = *src;
+			src++;
+			dest++;
+		}
+		else
+		{
+			*(dest) = '\0';
+			return (i);
+		}
 		i++;
 	}
-	return (s);
+	*(dest) = '\0';
+	i++;
+	src++;
+	while (*(src++) != '\0')
+		i++;
+	return (i);
 }
