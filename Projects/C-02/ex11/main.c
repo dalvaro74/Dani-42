@@ -1,15 +1,17 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
-char	*ft_strcapitalize(char *str);
+void	ft_putstr_non_printable(char *str);
 
 int main (void)
 {	
-	char pr1[] = "fggg gYY 123 y no hace ni 10 años que ocurrio ";
-	char pr2[] = "SS S";
+	char pr1[] = "Coucou\ftu vas bien ?";
+	char pr2[] = "SS\tS";
 
-	printf("%s\n", ft_strcapitalize(pr1));
-	printf("%s\n", ft_strcapitalize(pr2));
+	ft_putstr_non_printable(pr1);
+	write(1, "\n", 1);
+	ft_putstr_non_printable(pr2);
 
 	return(0);
 }
