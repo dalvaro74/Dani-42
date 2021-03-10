@@ -5,22 +5,20 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int main (void)
 {	
-	unsigned int size;
 	int longitud;
+	int n;
 
-	size = 5;
-	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src[] = "Creo que esto cabe";
+	n = 3;
 	
-	longitud = ft_strncmp(dest, src, size);
+	longitud = ft_strcmp("\200", "\0",n);
 	printf("La longitud de lo mio es: %d\n", longitud);
-	printf("%s\n", dest);
-
-
-	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src3[] = "Creo que esto cabe";
-	longitud = strncmp(dest3, src3, size);
+	longitud = strcmp("\200", "\0");
 	printf("La longitud funcion real es: %d\n", longitud);
-	printf("%s\n", dest3);
-	return(0);
+
+	printf("\n");
+
+	longitud = ft_strcmp("ABCD", "ABCE",n);
+	printf("La longitud de lo mio es: %d\n", longitud);
+	longitud = strcmp("ABCD", "ABCE");
+	printf("La longitud funcion real es: %d\n", longitud);
 }

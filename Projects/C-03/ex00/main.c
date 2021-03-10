@@ -6,17 +6,18 @@ int		ft_strcmp(char *s1, char *s2);
 int main (void)
 {	
 	int longitud;
-
-	char dest[] = "ab";
-	char src[] = "abc";
 	
-	longitud = ft_strcmp(dest, src);
+	longitud = ft_strcmp("\200", "\0");
 	printf("La longitud de lo mio es: %d\n", longitud);
+	longitud = strcmp("\200", "\0");
+	printf("La longitud funcion real es: %d\n", longitud);
 
+	printf("\n");
 
-	char dest3[] = "ab";
-	char src3[] = "abc";
-	longitud = strcmp(dest3, src3);
-	printf("La longitud funcion real es: %d\n", longitud);	
+	longitud = ft_strcmp("ABCD", "ABCE");
+	printf("La longitud de lo mio es: %d\n", longitud);
+	longitud = strcmp("ABCD", "ABCE");
+	printf("La longitud funcion real es: %d\n", longitud);
+
 	return(0);
 }
