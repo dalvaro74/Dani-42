@@ -6,7 +6,7 @@ char	*ft_strcapitalize(char *str);
 int main (void)
 {	
 	char pr1[] = "s alut, cOmment tU vas ? 42moTS quarante-deux; cinquante+et+un";
-	char pr2[] = "SS S";
+	char pr2[] = "SS  SAsS";
 
 	printf("%s\n", ft_strcapitalize(pr1));
 	printf("%s\n", ft_strcapitalize(pr2));

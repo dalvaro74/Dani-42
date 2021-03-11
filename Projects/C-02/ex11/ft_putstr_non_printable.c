@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:47:22 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 17:36:40 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:38:27 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	get_hex(int n)
 		i++;
 		n = n / 16;
 	}
-	while(i >= 0)
+	while (i >= 0)
 	{
 		tmp = char_print[i];
 		write(1, &tmp, 1);
