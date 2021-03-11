@@ -6,8 +6,8 @@ void	ft_putstr_non_printable(char *str);
 
 int main (void)
 {	
-	char pr1[] = "Coucou\n\ttu vas bien ?";
-	char pr2[] = "A ver que pasa con la ñ y con los acentos ú";
+	char pr1[] = "0dcbsidwhiu";
+	char pr2[] = "ñ";
 
 	ft_putstr_non_printable(pr1);
 	write(1, "\n", 1);

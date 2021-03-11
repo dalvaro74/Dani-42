@@ -6,11 +6,26 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:56:24 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/10 17:56:36 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/11 18:51:30 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, char *src)
 {
-	
+	int		i;
+	int		j;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	j = 0;
+	while (dest[j] != '\0')
+	{
+		src[i] = dest[j];
+		i++;
+		j++;
+	}
+	src[i] = '\0';
 }

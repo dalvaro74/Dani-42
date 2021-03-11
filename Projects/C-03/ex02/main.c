@@ -6,7 +6,7 @@ char	*ft_strcat(char *dest, char *src);
 int main (void)
 {	
 
-	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
+	char dest[20] = "ab";
 	char src[] = "Creo que esto cabe";
 	
 	ft_strcat(dest, src);
