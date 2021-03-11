@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	get_hex(int n)
 {
 	char	*hex;
-	char	char_print;
+	char	char_print[2];
+	char	tmp;
 	int		i;
 	int		mod;
 
@@ -25,10 +25,15 @@ void	get_hex(int n)
 	while (n != 0)
 	{
 		mod = n % 16;
-		char_print = hex[mod];
-		write(1, &char_print, 1);
+		char_print[i] = hex[mod];
 		i++;
 		n = n / 16;
+	}
+	while(i >= 0)
+	{
+		tmp = char_print[i];
+		write(1, &tmp, 1);
+		i--;
 	}
 }
 
