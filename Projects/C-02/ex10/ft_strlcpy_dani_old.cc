@@ -6,26 +6,30 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 21:46:33 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 19:11:23 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:36:13 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int i;
+	unsigned int	i;
+	unsigned int	buffer;
 
 	i = 0;
-	while (size > 1 && (dest[i] = src[i]) != 0)
+	buffer = 0;
+	while (src[buffer] != '\0')
+		buffer++;
+	while (i < size - 1)
 	{
-		dest[i] = src[i];
-		size--;
+		if (src[i] != '\0')
+			dest[i] = src[i];
+		else
+		{
+			dest[i] = '\0';
+			return (buffer);
+		}
 		i++;
 	}
 	dest[i] = '\0';
-	i = 0;
-	while (src[i])
-	{
-		i++;
-	}
-	return (i);
+	return (buffer);
 }

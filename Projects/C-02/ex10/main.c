@@ -8,7 +8,7 @@ int main (void)
 	unsigned int size;
 	int longitud;
 
-	size = 66;
+	size = 2;
 	char dest[] = "hola Mundo";
 	char src[] = "HOLA";
 	
