@@ -5,22 +5,22 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb);
 
 int main (void)
 {	
-	unsigned int size;
-	int longitud;
+	char 	*point;
+	unsigned int	n;
 
-	size = 5;
-	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src[] = "Creo que esto cabe";
+	n = 1;	
+	char s1[12] = "abcd";
+	char s2[] = "12345";
 	
-	longitud = ft_strncat(dest, src, size);
-	printf("La longitud de lo mio es: %d\n", longitud);
-	printf("%s\n", dest);
+	point = ft_strncat(s1, s2,n);
+	printf("%s\n", point);
 
+	
 
-	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src3[] = "Creo que esto cabe";
-	longitud = strncat(dest3, src3, size);
-	printf("La longitud funcion real es: %d\n", longitud);
-	printf("%s\n", dest3);
+	char sa[12] = "abcde";
+	char sb[] = "12345";
+	
+	strncat(sa, sb,n);
+	printf("%s\n", sa);
 	return(0);
 }

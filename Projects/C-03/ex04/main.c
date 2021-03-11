@@ -5,16 +5,16 @@ char	*ft_strstr(char *str, char *to_find);
 
 int main (void)
 {	
-	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src[] = "Creo que esto cabe";
+	char str[] = "Foo Bar pepe hola";
+	char to_find[] = "Fok";
 	
-	ft_strstr(dest, src);
-	printf("%s\n", dest);
+	printf("%s\n", ft_strstr(str, to_find));
 
 
-	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src3[] = "Creo que esto cabe";
-	strstr(dest3, src3);
-	printf("%s\n", dest3);
+	char str2[] = "Foo Bar pepe hola";
+	char to_find2[] = "Foof";
+	
+	printf("%s\n", strstr(str2, to_find2));
+	
 	return(0);
 }

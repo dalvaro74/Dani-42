@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:56:24 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 18:51:30 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/11 20:48:26 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@ char	*ft_strcat(char *dest, char *src)
 	int		j;
 
 	i = 0;
-	while (src[i] != '\0')
+	while (dest[i] != '\0')
 	{
 		i++;
 	}
 	j = 0;
-	while (dest[j] != '\0')
+	while (src[j] != '\0')
 	{
-		src[i] = dest[j];
+		dest[i] = src[j];
 		i++;
 		j++;
 	}
-	src[i] = '\0';
+	dest[i] = '\0';
+	return (dest);
 }

@@ -1,22 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strcat(char *dest, char *src);
+char	*ft_strcat(char *s1, char *s2);
 
 int main (void)
 {	
-
-	char dest[20] = "ab";
-	char src[] = "Creo que esto cabe";
+	char 	*point;
 	
-	ft_strcat(dest, src);
-	printf("%s\n", dest);
+	char s1[12] = "";
+	char s2[] = "12345";
+	
+	point = ft_strcat(s1, s2);
+	printf("%s\n", point);
 
 	
 
-	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src3[] = "Creo que esto cabe";
-	strcat(dest3, src3);
-	printf("%s\n", dest3);
+	char sa[12] = "abcde";
+	char sb[] = "12345";
+	
+	strcat(sa, sb);
+	printf("%s\n", sa);
 	return(0);
 }
