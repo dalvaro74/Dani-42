@@ -8,17 +8,17 @@ int main (void)
 	int longitud;
 	int n;
 
-	n = 3;
+	n = 4;
 	
-	longitud = ft_strcmp("\200", "\0",n);
+	longitud = ft_strncmp("\200", "\0",n);
 	printf("La longitud de lo mio es: %d\n", longitud);
-	longitud = strcmp("\200", "\0");
+	longitud = strncmp("\200", "\0",n);
 	printf("La longitud funcion real es: %d\n", longitud);
 
 	printf("\n");
 
-	longitud = ft_strcmp("ABCD", "ABCE",n);
+	longitud = ft_strncmp("ABCD", "ABCE",n);
 	printf("La longitud de lo mio es: %d\n", longitud);
-	longitud = strcmp("ABCD", "ABCE");
+	longitud = strncmp("ABCD", "ABCE",n);
 	printf("La longitud funcion real es: %d\n", longitud);
 }
