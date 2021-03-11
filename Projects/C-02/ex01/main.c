@@ -19,8 +19,8 @@ int main (void)
 	
 	
 	point = strncpy(dest, src, n);
-	printf("%s\n", dest);
-	printf("%s\n", point);
+	printf("%s", dest);
+	printf("%s", point);
 	
 	return(0);
 }
