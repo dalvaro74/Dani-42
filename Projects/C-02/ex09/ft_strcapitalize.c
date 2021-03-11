@@ -17,6 +17,13 @@ char	*ft_strcapitalize(char *s)
 	i = 0;
 	while (s[i] != '\0')
 	{
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			s[i] = s[i] + 32;
+		i++;
+	}
+	i = 0;
+	while (s[i] != '\0')
+	{
 		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
 			s[i] = s[i] - 32;
 		if ((s[i] < '0' || (s[i] > '9' && s[i] < 'A') ||

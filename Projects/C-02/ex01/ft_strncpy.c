@@ -17,17 +17,10 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	i = 0;
 	while (i < n)
 	{
-		if (*(src) != '\0')
-		{
-			*dest = *src;
-			src++;
-			dest++;
-		}
+		if (src[i] != '\0')
+			dest[i] = src[i];
 		else
-		{
-			*(dest) = '\0';
-			dest++;
-		}
+			dest[i] = '\0';
 		i++;
 	}
 	return (dest);

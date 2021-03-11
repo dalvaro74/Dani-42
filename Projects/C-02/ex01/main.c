@@ -5,19 +5,22 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
 int main (void)
 {	
+	char *point;
 	int		n;
 
-	n = 100;
+	n = 18;
 
 	char dest[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src[] = "Creo que esto cabe";
 	
-	ft_strncpy(dest, src, n);
+	point = ft_strncpy(dest, src, n);
 	printf("%s\n", dest);
-
-	char dest2[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src2[] = "Creo que esto cabe";
-	strncpy(dest2, src2, n);
-	printf("%s\n", dest2);
+	printf("%s\n", point);
+	
+	
+	point = strncpy(dest, src, n);
+	printf("%s\n", dest);
+	printf("%s\n", point);
+	
 	return(0);
 }

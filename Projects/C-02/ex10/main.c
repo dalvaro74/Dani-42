@@ -16,12 +16,6 @@ int main (void)
 	printf("La longitud de lo mio es: %d\n", longitud);
 	printf("%s\n", dest);
 
-	/*
-	char dest2[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
-	char src2[] = "Creo que esto cabe";
-	strncpy(dest2, src2, size);
-	printf("%s\n", dest2);
-	*/
 
 	char dest3[] = "Hola Pepito, ay Dos mio que se me quema el cocido...";
 	char src3[] = "Creo que esto cabe";
