@@ -1,15 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_strlen(char *str);
+void ft_putstr(char *str);
 
 int main (void)
 {	
 	char str[] = "Foo Bar pepe hola";
 	
-	printf("%d\n", ft_strlen(str));
-	
-	printf("%lu\n", strlen(str));
+	ft_putstr(str);
 	
 	return(0);
 }

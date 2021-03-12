@@ -4,9 +4,13 @@
 
 int main (void)
 {
-	int longitud;
-	
-	longitud = strlen("hola");
-	printf("%d\n", longitud);
+	char cadena[] = "123456789";
+    printf("%lu\n", sizeof(char)); 
+    printf("%lu\n", sizeof(int)); 
+    printf("%lu\n", sizeof(float)); 
+    printf("%lu\n", sizeof(double));
+    printf("%lu\n", sizeof(cadena));  
+
+    return 0; 
 }
 
