@@ -6,18 +6,17 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 20:59:22 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 21:14:39 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:15:50 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	while (*str != '\0')
 	{
 		write(1, str, 1);
 		str++;
 	}
-		
 }

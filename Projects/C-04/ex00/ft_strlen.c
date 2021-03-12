@@ -6,16 +6,16 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 20:56:59 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 21:14:43 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/12 14:14:44 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int len;
 
-	len =0;
+	len = 0;
 	while (str[len] != '\0')
 		len++;
-	return (len);	
+	return (len);
 }
