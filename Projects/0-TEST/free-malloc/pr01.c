@@ -6,7 +6,7 @@ int		main (void)
 	unsigned int num_elementos;
 	int *ptr = NULL;
 
-	num_elementos = 4;
+	num_elementos = 5;
 
 	ptr = malloc(num_elementos * sizeof(int));
 	if (ptr != NULL)
