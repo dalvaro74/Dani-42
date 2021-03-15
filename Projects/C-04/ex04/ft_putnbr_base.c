@@ -52,25 +52,21 @@ int	check_error(char *base)
 	}
 	return (0);
 }
-
 void	print_num(int nb, char* base)
 {
-	int *numchar = NULL;
+	char	numchar[12];
 	int		mod;
 	int		i;
 	int 	size;
 
 	size = ft_strlen(base);
-
-	numchar = malloc(size);
-
 	i = 0;
 	while (nb != 0)
 	{
 		mod = nb % size;
-		numchar[i] = mod + 48;
+		numchar[i] = base[mod];
 		i++;
-		nb = nb / 10;
+		nb = nb / size;
 	}
 	while (--i >= 0)
 	{
@@ -82,8 +78,7 @@ void	ft_putnbr_base(int nbr, char *base)
 {
 	if (!check_error (base))
 	{
-		//nbr = check_negative(nbr, char *base);
+		nbr = check_negative(nbr);
 		print_num(nbr, base);
-		write(1, "OK", 2);
 	}	
 }

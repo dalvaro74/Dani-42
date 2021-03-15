@@ -14,7 +14,9 @@ int main ()
 	ft_putnbr_base(-3008709);
 	write(1, "\n", 1);
 	*/
-	ft_putnbr_base(15, "abc");
+	ft_putnbr_base(1588603, "0123456789");
+	write(1, "\n", 1);
+	ft_putnbr_base(-4567, "poniguay");
 	write(1, "\n", 1);
 	return(0);
 }
