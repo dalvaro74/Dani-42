@@ -6,13 +6,13 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:12:14 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 21:14:09 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/15 17:58:37 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_strlen(char *str)
+int		ft_strlen(char *str)
 {
 	int len;
 
@@ -21,7 +21,8 @@ int	ft_strlen(char *str)
 		len++;
 	return (len);
 }
-int	check_negative(int nb)
+
+int		check_negative(int nb)
 {
 	if (nb < 0)
 	{
@@ -30,7 +31,8 @@ int	check_negative(int nb)
 	}
 	return (nb);
 }
-int	check_error(char *base)
+
+int		check_error(char *base)
 {
 	int i;
 	int j;
@@ -38,26 +40,29 @@ int	check_error(char *base)
 	if (ft_strlen(base) < 2)
 		return (1);
 	i = 0;
-	while (i< ft_strlen(base))
+	while (i < ft_strlen(base))
 	{
-		j = i+1;
-		while (j< ft_strlen(base))
+		j = i + 1;
+		while (j < ft_strlen(base))
 		{
-			if (base[i] == base[j] || base[i] == '+' || base[i] == '-' 
+			if (base[i] == base[j] || base[i] == '+' || base[i] == '-'
 				|| base[j] == '+' || base[j] == '-')
+			{
 				return (1);
+			}
 			j++;
 		}
 		i++;
 	}
 	return (0);
 }
-void	print_num(int nb, char* base)
+
+void	print_num(int nb, char *base)
 {
 	char	numchar[12];
 	int		mod;
 	int		i;
-	int 	size;
+	int		size;
 
 	size = ft_strlen(base);
 	i = 0;
@@ -76,9 +81,9 @@ void	print_num(int nb, char* base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	if (!check_error (base))
+	if (!check_error(base))
 	{
 		nbr = check_negative(nbr);
 		print_num(nbr, base);
-	}	
+	}
 }

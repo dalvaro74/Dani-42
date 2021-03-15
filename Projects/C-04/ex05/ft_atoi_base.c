@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:13:23 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/11 21:14:20 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/15 18:22:02 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int		check_neg(int num, int neg)
 		return (-1 * num);
 	return (num);
 }
-int	check_error(char *base)
+
+int		check_error(char *base)
 {
 	int i;
 	int j;
@@ -24,12 +25,12 @@ int	check_error(char *base)
 	if (ft_strlen(base) < 2)
 		return (1);
 	i = 0;
-	while (i< ft_strlen(base))
+	while (i < ft_strlen(base))
 	{
-		j = i+1;
-		while (j< ft_strlen(base))
+		j = i + 1;
+		while (j < ft_strlen(base))
 		{
-			if (base[i] == base[j] || base[i] == '+' || base[i] == '-' 
+			if (base[i] == base[j] || base[i] == '+' || base[i] == '-'
 				|| base[j] == '+' || base[j] == '-')
 				return (1);
 			j++;
@@ -38,10 +39,12 @@ int	check_error(char *base)
 	}
 	return (0);
 }
-int ft_atoi_base(char *str, char *base)
+
+int		ft_atoi_base(char *str, char *base)
 {
 	int cont_neg;
 	int num;
+	int size;
 
 	cont_neg = 0;
 	num = 0;

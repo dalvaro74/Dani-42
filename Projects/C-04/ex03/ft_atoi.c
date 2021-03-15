@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:13:43 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/12 14:17:19 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/15 17:59:40 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		check_neg(int num, int neg)
 		return (-1 * num);
 	return (num);
 }
+
 int		ft_atoi(char *str)
 {
 	int cont_neg;
