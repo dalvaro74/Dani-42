@@ -12,7 +12,16 @@
 
 #include <unistd.h>
 
-int		check_negative(int nb)
+int	ft_strlen(char *str)
+{
+	int len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
+}
+int	check_negative(int nb)
 {
 	if (nb < 0)
 	{
@@ -21,17 +30,44 @@ int		check_negative(int nb)
 	}
 	return (nb);
 }
-
-void	print_num(int nb)
+int	check_error(char *base)
 {
-	char	numchar[12];
+	int i;
+	int j;
+
+	if (ft_strlen(base) < 2)
+		return (1);
+	i = 0;
+	while (i< ft_strlen(base))
+	{
+		j = i+1;
+		while (j< ft_strlen(base))
+		{
+			if (base[i] == base[j] || base[i] == '+' || base[i] == '-' 
+				|| base[j] == '+' || base[j] == '-')
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	print_num(int nb, char* base)
+{
+	int *numchar = NULL;
 	int		mod;
 	int		i;
+	int 	size;
+
+	size = ft_strlen(base);
+
+	numchar = malloc(size);
 
 	i = 0;
 	while (nb != 0)
 	{
-		mod = nb % 10;
+		mod = nb % size;
 		numchar[i] = mod + 48;
 		i++;
 		nb = nb / 10;
@@ -44,18 +80,10 @@ void	print_num(int nb)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	if (nb == -2147483648)
+	if (!check_error (base))
 	{
-		write(1, "-", 1);
-		write(1, "2", 1);
-		ft_putnbr(147483648);
-		return ;
-	}
-	if (nb == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
-	nb = check_negative(nb);
-	print_num(nb);
+		//nbr = check_negative(nbr, char *base);
+		print_num(nbr, base);
+		write(1, "OK", 2);
+	}	
 }

@@ -5,7 +5,7 @@ int ft_strlen(char *str);
 
 int main (void)
 {	
-	char str[] = "Foo Bar pepe hola";
+	char str[] = "Foo Bar pepe0 hola";
 	
 	printf("%d\n", ft_strlen(str));
 	
