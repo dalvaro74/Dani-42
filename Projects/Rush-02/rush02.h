@@ -10,4 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RUSH01_H
+#define RUSH01_H
 int		check_neg(int num, int neg);
+struct s_palabra
+{
+    char *key;
+	char *value;
+};
+int ft_check_args(char *str);
+int ft_read_diccionary(char *filename, char *cadena);
+void ft_separate_rows(char *cadini, struct s_palabra *palabras);
+#endif
+

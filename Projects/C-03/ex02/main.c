@@ -7,7 +7,7 @@ int main (void)
 {	
 	char 	*point;
 	
-	char s1[12] = "";
+	char s1[12] = "abcde";
 	char s2[] = "12345";
 	
 	point = ft_strcat(s1, s2);
