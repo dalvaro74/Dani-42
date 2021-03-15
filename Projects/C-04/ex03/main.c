@@ -5,7 +5,7 @@ int ft_atoi(char *str);
 
 int main (void)
 {	
-	char str[] = "    ----+--+-123456gg7";
+	char str[] = "    \n \t----+--+-12345688gg7";
 	
 	printf("%d\n",ft_atoi(str));
 	
