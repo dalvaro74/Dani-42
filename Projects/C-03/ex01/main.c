@@ -17,8 +17,8 @@ int main (void)
 
 	printf("\n");
 
-	longitud = ft_strncmp("ABCD", "ABCE",n);
+	longitud = ft_strncmp("ABCD", "ABCD",n);
 	printf("La longitud de lo mio es: %d\n", longitud);
-	longitud = strncmp("ABCD", "ABCE",n);
+	longitud = strncmp("ABCD", "ABCD",n);
 	printf("La longitud funcion real es: %d\n", longitud);
 }

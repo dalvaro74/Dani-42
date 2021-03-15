@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 17:56:12 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/15 19:13:22 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/15 20:27:33 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 		return (0);
 	while (n != 0)
 	{
-		if (s1 != s2)
-			return (s1 - s2);
-		if (s1 == 0)
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		if (*s1 == 0)
 			return (0);
 		s1++;
 		s2++;
