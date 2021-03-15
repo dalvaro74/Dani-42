@@ -16,7 +16,6 @@ int		check_neg(int num, int neg)
 		return (-1 * num);
 	return (num);
 }
-
 int		ft_atoi(char *str)
 {
 	int cont_neg;
