@@ -6,15 +6,20 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:13:23 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/15 18:22:02 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/15 21:47:37 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		check_neg(int num, int neg)
+#include <stdio.h>
+
+int		ft_strlen(char *str)
 {
-	if (neg % 2)
-		return (-1 * num);
-	return (num);
+	int len;
+
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
 
 int		check_error(char *base)
@@ -40,25 +45,53 @@ int		check_error(char *base)
 	return (0);
 }
 
+int		pos_base(char c, char *base)
+{
+	int position;
+
+	position = 0;
+	while (base[position] != 0)
+	{
+		if (c == base[position])
+			return (position);
+		position++;
+	}
+	return (0);
+}
+
+int		get_pot(int base, int pot)
+{
+	int result;
+
+	if (pot == 0)
+		return (1);
+
+	result = base;
+	result = result * get_pot(base, pot - 1);
+	return (result);
+}
+
 int		ft_atoi_base(char *str, char *base)
 {
-	int cont_neg;
 	int num;
-	int size;
+	int pos_b;
+	int i;
+	int j;
+	int potencia;
 
-	cont_neg = 0;
-	num = 0;
-	while (*str != '\0')
+	if (!check_error(base))
 	{
-		if (*str == '-')
-			cont_neg++;
-		if (*str >= '0' && *str <= '9')
+		i = 0;
+		num = 0;
+		j = ft_strlen(str) - 1;
+		while (i < ft_strlen(str))
 		{
-			num = num * 10 + (int)(*str - 48);
-			if (*(str + 1) < '0' || *(str + 1) > '9')
-				return (check_neg(num, cont_neg));
+			pos_b = pos_base(str[i], base);
+			potencia = get_pot(ft_strlen(base), j - i);
+			num = num + pos_b * potencia;
+			i++;
 		}
-		str++;
+		return (num);
 	}
 	return (0);
 }
