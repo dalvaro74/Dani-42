@@ -5,7 +5,7 @@ int ft_atoi(char *str);
 
 int main (void)
 {	
-	char str[] = "    \n \t++++--667706pp";
+	char str[] = "a    \n \t++++--n667706pp";
 	
 	printf("%d\n",ft_atoi(str));
 	

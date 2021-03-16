@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 21:13:23 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/16 14:00:36 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:18:17 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int		get_pot(int base, int pot)
 
 	if (pot == 0)
 		return (1);
-
 	result = base;
 	result = result * get_pot(base, pot - 1);
 	return (result);
