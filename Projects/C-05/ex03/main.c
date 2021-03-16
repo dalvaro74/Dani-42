@@ -7,7 +7,7 @@ int main (void)
 {	
 	int num = 15;
 	
-	printf("%d\n",ft_recursive_power(0, 0));
+	printf("%d\n",ft_recursive_power(5, 3));
 	
 	return(num);
 }
