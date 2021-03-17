@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:52:22 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/17 21:46:47 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/17 21:50:16 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void fill_map(int rows, int columns, char *file)
 			if (c != '\n')
 			{
 				printf("%d - %d - %c  ", i, j, c);
-				map[i][j] = c;
+				//map[i][j] = c;
 				j++;	
 			}
 			else
@@ -115,7 +115,7 @@ int		main (void)
 
 	fill_map(rows, columns, filename);
 	//printf("%c\n", map[0][0]);
-	printf("El tamaño de las rows es: %d\n", rows);
+	printf("\nEl tamaño de las rows es: %d\n", rows);
 	printf("El tamaño de las columnas es: %d\n", columns);
 	free(map);
 	return (0);
