@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 21:26:32 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/17 21:26:58 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/17 20:06:56 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/17 20:09:43 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
-{
-	int	i;
-	int	mas;
-	int res;
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	res = 0;
-	mas = 1;
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			mas = -mas;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (res * mas);
-}
+int		ft_atoi(char *str);

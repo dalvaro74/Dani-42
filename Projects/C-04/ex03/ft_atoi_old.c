@@ -5,32 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 21:26:32 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/17 21:26:58 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/11 21:13:43 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/15 17:59:40 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int		check_neg(int num, int neg)
 {
-	int	i;
-	int	mas;
-	int res;
+	if (neg % 2)
+		return (-1 * num);
+	return (num);
+}
 
-	res = 0;
-	mas = 1;
-	i = 0;
-	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	while (str[i] == '+' || str[i] == '-')
+int		ft_atoi(char *str)
+{
+	int cont_neg;
+	int num;
+
+	cont_neg = 0;
+	num = 0;
+	while (*str != '\0')
 	{
-		if (str[i] == '-')
-			mas = -mas;
-		i++;
+		if (*str == '-')
+			cont_neg++;
+		if (*str >= '0' && *str <= '9')
+		{
+			num = num * 10 + (int)(*str - 48);
+			if (*(str + 1) < '0' || *(str + 1) > '9')
+				return (check_neg(num, cont_neg));
+		}
+		str++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		res = res * 10 + str[i] - '0';
-		i++;
-	}
-	return (res * mas);
+	return (0);
 }
