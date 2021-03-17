@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:11:38 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/17 14:47:44 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/17 18:25:03 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		main(int argc, char *argv[])
 	j = 1;
 	while (i < argc)
 	{
-		while (j > 0)
+		while (j > 1)
 		{
 			if (ft_strcmp(argv[j], argv[j - 1]) < 0)
 			{
