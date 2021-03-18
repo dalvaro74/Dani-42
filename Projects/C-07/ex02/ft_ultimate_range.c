@@ -6,7 +6,7 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 18:23:36 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/18 19:23:15 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/18 20:56:53 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int		ft_ultimate_range(int **range, int min, int max)
 	}
 	else
 	{
-		if (ptr = malloc(size))
+		if ((ptr = malloc(size)))
 		{
 			num = min;
 			i = 0;
@@ -36,6 +36,6 @@ int		ft_ultimate_range(int **range, int min, int max)
 		else
 			return (-1);
 	}
-	range = ptr;
+	*range = ptr;
 	return (size);
 }
