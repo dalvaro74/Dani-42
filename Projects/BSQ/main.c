@@ -6,13 +6,13 @@
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 16:52:22 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/17 21:50:16 by dalvaro-         ###   ########.fr       */
+/*   Updated: 2021/03/18 16:41:33 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-char **map;
+char **g_map;
 
 int rows_size( char *file)
 {
@@ -65,33 +65,27 @@ void fill_map(int rows, int columns, char *file)
 	int i;
 	int j;
 	char c;
-	int numbytes;
-	int cont_salto;
+	char *ptr;
 	
 	f = open(file, O_RDONLY);
-	i = 0;
 	j = 0;
-	cont_salto = 0;
-	map[0][0] = 'a';
-	while ((numbytes = read(f, &c, 1) > 0))
+	i = 0;
+	c = 0;
+	while ( c != '\n')
+		read(f, &c, 1);
+	while (i < rows)
 	{
-		if (cont_salto > 0 && cont_salto <=rows)
+		j = 0;
+		ptr = (char *)malloc(columns);
+		while (j < columns)
 		{
+			read(f, &c, 1);
 			if (c != '\n')
-			{
-				printf("%d - %d - %c  ", i, j, c);
-				//map[i][j] = c;
-				j++;	
-			}
-			else
-			{
-				i++;
-				j = 0;	
-			}				
+				*(ptr + j++) = c;
 		}
-		if (c == '\n')
-			cont_salto++;
+		g_map[i++] = ptr;
 	}
+	free(ptr);
 	close(f);
 }
 
@@ -105,18 +99,28 @@ int		main (void)
 	rows = rows_size(filename);
 	columns = columns_size(filename);
 
-	map = (char **)malloc(rows);
+	g_map = (char **)malloc(rows);
 	i = 0;
 	while (i < rows)
 	{
-		map[i] = (char *)malloc(columns);
+		g_map[i] = (char *)malloc(columns);
 		i++;
 	}
 
 	fill_map(rows, columns, filename);
-	//printf("%c\n", map[0][0]);
+		
 	printf("\nEl tamaño de las rows es: %d\n", rows);
 	printf("El tamaño de las columnas es: %d\n", columns);
-	free(map);
+	printf("%s\n", g_map[14]);
+	printf("%c\n", g_map[14][11]);
+	i = 0;
+	/*
+	while(i < rows)
+	{
+		free(g_map[i]);
+		i++;
+	}		
+	free(g_map);
+	*/
 	return (0);
 }
