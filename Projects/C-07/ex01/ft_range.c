@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dalvaro- <dalvaro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/17 15:03:33 by dalvaro-          #+#    #+#             */
-/*   Updated: 2021/03/18 18:31:05 by dalvaro-         ###   ########.fr       */
+/*   Created: 2021/03/18 18:22:06 by dalvaro-          #+#    #+#             */
+/*   Updated: 2021/03/18 19:22:09 by dalvaro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int		*ft_range(int min, int max)
 {
-	int len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
-}
-
-char	*ft_strdup(char *src)
-{
+	int		*ptr;
 	int		size;
-	char	*ptr;
+	int		num;
+	int		i;
 
-	size = ft_strlen(src);
-	ptr = malloc(size);
-	if (ptr != NULL)
+	if ((size = max - min) <= 0)
+		return (NULL);
+	else
 	{
-		ptr = src;
+		ptr = malloc(size);
+		num = min;
+		i = 0;
+		while (num < max)
+			ptr[i++] = num++;
 	}
 	return (ptr);
 }

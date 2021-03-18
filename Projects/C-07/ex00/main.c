@@ -5,9 +5,11 @@ char	*ft_strdup(char *src);
 
 int main (void)
 {	
-	int num = 102;
+	char *ptr;
 	
-	printf("%d\n",ft_strdup(num));
+	ptr = ft_strdup("abc");
+	
+	printf("%s\n",ptr);
 	
 	return(0);
 }
