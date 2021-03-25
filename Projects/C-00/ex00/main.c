@@ -2,7 +2,7 @@ void	ft_putchar(char c);
 
 int main ()
 {
-	ft_putchar('K');
+	ft_putchar('J');
 	return(0);
 }
 
